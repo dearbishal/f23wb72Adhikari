@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+    - let results = [{ book_name: "Dracula", author: "Bram Stoker", price: 59 },{ book_name: "Fahrenheit 451", author: "Ray Bradbury", price: 99 },{ book_name: "Into the Woods", author: "James Lapine", price: 89 }]
+
+  .container-fluid
+    .row
+      each books in results
+        .col-sm-2
+          h3= books.book_name
+          p author: #{books.author}
+          p Price: $#{books.price}
