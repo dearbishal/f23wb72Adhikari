@@ -16,3 +16,8 @@ block content
         div(class="col-sm-2") book_name: #{item.book_name}
         div(class="col-sm-2") author: #{item.author}
         div(class="col-sm-2") price: #{item.price}
+
+  script.
+    function buy(itemNum){
+      alert(`The purchased item is ${itemNum+1}`)
+    }
