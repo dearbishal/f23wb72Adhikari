@@ -1,7 +1,6 @@
 extends layout
 
 block content
-
   h1= title
   -
     let results = [
@@ -11,13 +10,15 @@ block content
     ]
 
   div(class="container-fluid")
-    each item in results
+    each item, index in results  
       div(class="row")
         div(class="col-sm-2") book_name: #{item.book_name}
         div(class="col-sm-2") author: #{item.author}
         div(class="col-sm-2") price: #{item.price}
+        div(class="col-sm-2") 
+          button(onclick=`buy(${index})`) Buy  
 
   script.
     function buy(itemNum){
-      alert(`The purchased item is ${itemNum+1}`)
+      alert(`You purchased item ${itemNum+1}`)
     }
